@@ -1,0 +1,527 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8">
+		<title>Telemed365.ru</title>
+		
+		<link rel="stylesheet" href="css/bootstrap.min.css">
+		<link rel="stylesheet" href="css/bootstrap-modal.css">
+		<link rel="stylesheet" href="font-awesome/css/font-awesome.min.css">
+		<link rel="stylesheet" type="text/css" href="css/front.css">
+		<link href="https://fonts.googleapis.com/css?family=Roboto:100,300,400,500,700" rel="stylesheet">
+		<link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700" rel="stylesheet">
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=1">
+		<meta name="apple-mobile-web-app-capable" content="yes">
+		<meta name="apple-mobile-web-app-status-bar-style" content="black">
+		
+	</head>
+	<body>
+		<div id="authorize" class="modal fade modal-auth" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+             <div class="modal-dialog" role="document">
+                <div class="modal-content" style="padding: 15px;">
+                    <div class="modal-header text-center">
+                        <button class="close" type="button" data-dismiss="modal">×</button>
+                       	<h4>Моя учетная запись</h4>
+                    </div>
+                    <div class="modal-body text-center">
+                    	<form id="modal-form-auth">
+						  <div  class="form-group">
+						    <input name="UserName" type="text" class="form-control" id="UserName" placeholder="Логин/e-mail*" required="required">
+						  </div>
+						  <div  class="form-group">
+						    <input name="Password" type="password" class="form-control password" id="Password" placeholder="Пароль" required="required">
+						    <a class="forgot" href="https://p.ruhealth.net/Auth/NewUser/RecoverPassword">Забыли пароль?</a>
+						  </div>
+						  <button type="button" class="btn btn-default navbar-btn orange-btn">Войти в аккаунт</button>
+						</form>
+                        
+                        <div class="auth-social-block">
+                        	<div class="delimiter">или</div>
+                        	<p>Войти с помощью социальной сети</p>
+                        	<div class="row">
+					          <div class="col-md-4">
+
+								<div class="td_social_type td-pb-margin-side td_social_facebook"><div class="td-sp td-sp-facebook"></div></div>
+
+					          </div>
+					          <div class="col-md-4">
+
+								<div class="td_social_type td-pb-margin-side td_social_googleplus"><div class="td-sp td-sp-googleplus"></div></div>
+
+					          </div>
+					          <div class="col-md-4">
+
+								<div class="td_social_type td-pb-margin-side td_social_vk"><div class="td-sp td-sp-vk"></div></div>
+
+
+					          </div>
+					        </div>
+                        </div>
+                    </div>
+                    <div class="modal-footer">
+                        <p>Нет аккаунта? <a href="https://p.ruhealth.net/Auth/NewUser/AccountType">Зарегистрируйтесь тут!</a></p>
+                    </div>
+                </div>
+            </div>
+        </div>   	
+		<nav class="navbar navbar-default navbar-fixed-top header-menu">
+		  <div class="container">
+		   
+		    <div class="navbar-header">
+		      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#top-navbar-collapse" aria-expanded="false">
+		        <span class="sr-only">Toggle navigation</span>
+		        <span class="icon-bar"></span>
+		        <span class="icon-bar"></span>
+		        <span class="icon-bar"></span>
+		      </button>
+		      <a class="navbar-brand logo" href="#">
+				<img src="http://www.ruhealth.net/bitrix/templates/main/images/logo.png" class="logo-image">
+		      </a>
+		    </div>
+
+		   
+		    <div class="collapse navbar-collapse navbar-right top-menu" id="top-navbar-collapse">
+		      <ul class="nav navbar-nav">
+		        <li class="nav-item"><a href="#dutydoc_scr">Дежурный врач</a></li>
+                <li class="nav-item"><a href="#doctors_scr">Врачи</a></li>
+                <li class="nav-item"><a href="#clinics_scr">Клиники</a></li>
+                <li class="nav-item"><a href="#medcart_scr">Медкарта</a></li>
+                <li class="nav-item"><a href="#howwework_scr">Как мы работаем</a></li>
+                <li class="nav-item"><a href="#contact_scr">Вопросы</a></li>
+                <li class="nav-item last"><a href="#"><img src="img/search-icon.png" class="search-icon"></a></li> 
+		      </ul>
+		      <button type="button" class="btn btn-default navbar-btn orange-btn big-signup-btn" data-toggle="modal" data-target="#authorize">Войти в аккаунт</button>
+		      <button type="button" class="btn btn-default navbar-btn orange-btn small-signup-btn"  data-toggle="modal" data-target="#authorize"><i class="fa fa-sign-in" aria-hidden="true"></i></button>
+		    </div><!-- /.navbar-collapse -->
+		  </div><!-- /.container -->
+		</nav>
+
+
+		<section id="main_scr" class="first-screen">
+			<div class="hidden-xs hidden-sm intro-right">
+				<div class="doctor-img">
+            		<img src="img/first-screen-doctor.png" class="img-responsive">
+            	</div>
+            </div>
+	        <div class="container">
+	            <div class="row">
+	                <div class="col-md-6 col-lg-6 col-md-offset-6 col-lg-offset-6 col-sm-12 col-xs-12 intro-left">
+	                    <div class="intro-block intro-duty">
+	                    	<h2>Ваш дежурный врач</h2>
+	                    	<p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy.</p>
+	                    	<div class="header-button">
+	                    		<div class="header-button-left">
+	                    			<a href="#" class="h-button-l">Список клиник</a>
+	                    		</div>
+	                    		<div class="header-button-right">
+	                    			<a href="#" class="h-button-r">Список врачей</a>
+	                    		</div>
+	                    	</div>
+	                    	
+	                    </div>
+	                    <div class="intro-block intro-callnow">
+	                    	<h2>Обратиться сейчас</h2>
+	                    	<p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy.</p>
+	                    	<button type="button" class="btn btn-default orange-btn">Немедленная консультация</button>
+	                    </div>
+	                </div>
+	               
+	                    
+	            </div><!--//row-->
+	            <div class="row">
+	            	<div class="col-md-12 text-center">
+	            		<a href="#doctors_scr" class="btn-circle">
+                            <i class="fa fa-angle-double-down"></i>
+                        </a>
+	            	</div>
+	            </div>
+	        </div><!--//container-->
+	    </section>
+	    <section class="second-screen">
+	        <div class="container">
+	            <div class="row">
+	                <div class="col-md-12 text-center">
+	                    <p class="lead-descr"><strong>RuHealth</strong> - это, кратко Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. </p>
+	                </div>
+	                <div class="col-md-2 col-sm-4  col-xs-12">
+	                	<div class="disciplines-item text-center">
+		                	<div class="sprite sprite-brain"></div>
+		                	<h4  class="deepblue-header">Неврология</h4>
+		                	<p class="specif-paragraph">Lorem Ipsum is simply dummy text of the printing and typesetting industry.</p>
+		                </div>
+	                </div>
+	                <div class="col-md-2 col-sm-4  col-xs-12">
+	                	<div class="disciplines-item text-center">
+		                	<div class="sprite sprite-tooth"></div>
+		                	<h4  class="deepblue-header">Стоматология</h4>
+		                	<p class="specif-paragraph">Lorem Ipsum is simply dummy text of the printing and typesetting industry.</p>
+		                </div>
+	                </div>
+	                <div class="col-md-2 col-sm-4  col-xs-12">
+	                	<div class="disciplines-item text-center">
+		                	<div class="sprite sprite-stomach"></div>
+		                	<h4  class="deepblue-header">Гастроэнтерология</h4>
+		                	<p class="specif-paragraph">Lorem Ipsum is simply dummy text of the printing and typesetting industry.</p>
+		                </div>
+	                </div>
+	                <div class="col-md-2 col-sm-4  col-xs-12">
+	                	<div class="disciplines-item text-center">
+		                	<div class="sprite sprite-broken-bone"></div>
+		                	<h4  class="deepblue-header">Хирургия</h4>
+		                	<p class="specif-paragraph">Lorem Ipsum is simply dummy text of the printing and typesetting industry.</p>
+		                </div>
+	                </div>
+	                <div class="col-md-2 col-sm-4  col-xs-12">
+	                	<div class="disciplines-item text-center">
+		                	<div class="sprite sprite-cardiogram"></div>
+		                	<h4  class="deepblue-header">Кардиология</h4>
+		                	<p class="specif-paragraph">Lorem Ipsum is simply dummy text of the printing and typesetting industry.</p>
+		                </div>
+	                </div>
+	                <div class="col-md-2 col-sm-4  col-xs-12">
+	                	<div class="disciplines-item text-center">
+		                	<div class="sprite sprite-stethoscope"></div>
+		                	<h4  class="deepblue-header">Терапия</h4>
+		                	<p class="specif-paragraph">Lorem Ipsum is simply dummy text of the printing and typesetting industry.</p>
+		                </div>
+	                </div>
+	                    
+	            </div><!--//row-->
+	            <div class="row"  id="doctors_scr">
+	            	<div class="col-md-12  text-center section-heading">
+	            		<div class="separator"><img src="img/separator-doctors.png" height="40" width="40"></div>
+		            	<h2>Наши врачи / <span class="count">1280</span></h2>
+		            	<p>Ipsum is simply dummy text of the printing and typesetting industry. <br> Lorem Ipsum has been the industry's standard dummy text ever since the 1500s</p>
+		            </div>
+		            
+		            <div class="col-md-2 col-sm-4  col-xs-12">
+	                	<div class="doctor-item text-center">
+		                	<div class="doctor-item-mainpage  text-center"><img src="img/doctor-id-img.jpg" class="img-responsive" alt="Селезнева Т.И"></div>
+		                	<h4 class="deepblue-header"><a href="#">Селезнева Т.И.</a></h4>
+		                	<p class="specif-paragraph">Lorem Ipsum is simply dummy text of the printing and typesetting industry.</p>
+		                </div>
+	                	<div class="specification">
+	                		<ul>
+	                			<li><a href="#">Кардиолог</a></li>
+	                			<li><a href="#">Хирург</a></li>
+	                			<li><a href="#">Сердечно-сосудистый хирург</a></li>
+	                		</ul>
+	                	</div>
+	                	<div class="docclinic">
+	                		<p>Клиника на <a href="#">Тургенева, 14</a></p>
+	                	</div>
+		            </div>
+	                
+	                <div class="col-md-2 col-sm-4  col-xs-12">
+	                	<div class="doctor-item text-center">
+		                	<div class="doctor-item-mainpage"><img src="img/doctor-id-img_1.jpg" class="img-responsive" alt="Селезнева Т.И"></div>
+		                	<h4 class="deepblue-header"><a href="#">Селезнева Т.И.</a></h4>
+		                	<p class="specif-paragraph">Lorem Ipsum is simply dummy text of the printing and typesetting industry.</p>
+		                </div>
+		                <div class="specification">
+	                		<ul>
+	                			<li><a href="#">Ортопед</a></li>
+	                			<li><a href="#">Хирург</a></li>
+	                			<li><a href="#">Травматолог</a></li>
+	                		</ul>
+	                	</div>
+	                	<div class="docclinic">
+	                		<p>Клиника на <a href="#">Тургенева, 14</a></p>
+	                	</div>
+	                </div>
+	                <div class="col-md-2 col-sm-4  col-xs-12">
+	                	<div class="doctor-item text-center">
+		                	<div class="doctor-item-mainpage"><img src="img/doctor-id-img_2.jpg" class="img-responsive" alt="Селезнева Т.И"></div>
+		                	<h4 class="deepblue-header"><a href="#">Селезнева Т.И.</a></h4>
+		                	<p class="specif-paragraph">Lorem Ipsum is simply dummy text of the printing and typesetting industry.</p>
+		                </div>
+		                <div class="specification">
+	                		<ul>
+	                			<li><a href="#">Акушер-гинеколог</a></li>
+	                			<li><a href="#">УЗИ-врач</a></li>
+	                			<li><a href="#">Эндокринолог</a></li>
+	                		</ul>
+	                	</div>
+	                	<div class="docclinic">
+	                		<p>Клиника на <a href="#">Тургенева, 14</a></p>
+	                	</div>
+	                </div>
+	                <div class="col-md-2 col-sm-4  col-xs-12">
+	                	<div class="doctor-item text-center">
+		                	<div class="doctor-item-mainpage"><img src="img/doctor-id-img.jpg" class="img-responsive" alt="Селезнева Т.И"></div>
+		                	<h4 class="deepblue-header"><a href="#">Селезнева Т.И.</a></h4>
+		                	<p class="specif-paragraph">Lorem Ipsum is simply dummy text of the printing and typesetting industry.</p>
+		                </div>
+		                <div class="specification">
+	                		<ul>
+	                			<li><a href="#">Иглорефлексотерапевт</a></li>
+	                			<li><a href="#">Мануальный терапевт</a></li>
+	                			<li><a href="#">Невролог</a></li>
+	                			<li><a href="#">Терапевт</a></li>
+	                		</ul>
+	                	</div>
+	                	<div class="docclinic">
+	                		<p>Клиника на <a href="#">Тургенева, 14</a></p>
+	                	</div>
+	                </div>
+	                <div class="col-md-2 col-sm-4  col-xs-12">
+	                	<div class="doctor-item text-center">
+		                	<div class="doctor-item-mainpage"><img src="img/doctor-id-img_2.jpg" class="img-responsive" alt="Селезнева Т.И"></div>
+		                	<h4 class="deepblue-header"><a href="#">Селезнева Т.И.</a></h4>
+		                	<p class="specif-paragraph">Lorem Ipsum is simply dummy text of the printing and typesetting industry.</p>
+		                </div>
+		                <div class="specification">
+	                		<ul>
+	                			<li><a href="#">Врач функциональной диагностики</a></li>
+	                			<li><a href="#">Невролог</a></li>
+	                			
+	                		</ul>
+	                	</div>
+	                	<div class="docclinic">
+	                		<p>Клиника на <a href="#">Тургенева, 14</a></p>
+	                	</div>
+	                </div>
+	                <div class="col-md-2 col-sm-4  col-xs-12">
+	                	<div class="doctor-item text-center">
+		                	<div class="doctor-item-mainpage"><img src="img/doctor-id-img_1.jpg" class="img-responsive" alt="Селезнева Т.И"></div>
+		                	<h4 class="deepblue-header"><a href="#">Селезнева Т.И.</a></h4>
+		                	<p class="specif-paragraph">Lorem Ipsum is simply dummy text of the printing and typesetting industry.</p>
+		                </div>
+	                
+		                <div class="specification">
+	                		<ul>
+	                			<li><a href="#">Мануальный терапевт</a></li>
+	                			<li><a href="#">Остеопат</a></li>
+	                			
+	                		</ul>
+	                	</div>
+	                	<div class="docclinic">
+	                		<p>Клиника на <a href="#">Тургенева, 14</a></p>
+	                	</div>
+	                </div>
+	            </div>
+	            <div class="row">
+	                <div class="col-md-12 text-center">
+	                    <a href="#" class="all-items">Смотреть всех 1280 врачей <i class="fa fa-angle-double-right" aria-hidden="true"></i></a>
+	                </div>
+	            </div>
+	        </div><!--//container-->
+	    </section>
+	    <section id="clinics_scr" class="third-screen">
+	        <div class="container">
+	            
+	            <div class="row">
+	            	<div class="col-md-12  text-center section-heading">
+	            		<div class="separator"><img src="img/separator-clinics.png" height="40" width="40"></div>
+		            	<h2>Наши клиники / <span class="count">234,789</span></h2>
+		            	<p>Ipsum is simply dummy text of the printing and typesetting industry. <br> Lorem Ipsum has been the industry's standard dummy text ever since the 1500s</p>
+		            </div>
+		            <div class="col-md-3">
+		            	<div class="clinics-map-list">
+		            		<a href="#" class="arrows"><i class="fa fa-angle-double-up"></i></a>
+		            		<ul>
+		            			<li><a href="#">Городская клиническая больница № 1 им. Н.И. Пирогова (ГКБ 1)</a></li>
+		            			<li><a href="#">Городская клиническая больница № 4 (ГКБ 4)</a></li>
+		            			<li><a href="#">Городская клиническая больница № 6 (ГКБ 6)</a></li>
+		            			<li><a href="#">Городская больница № 8 (ГКБ 8)</a></li>
+		            			<li><a href="#">Центр паллиативной медицины (бывшая ГКБ № 11)</a></li>
+		            			<li><a href="#">Городская больница № 43 (ГКБ 43)</a></li>
+		            			<li><a href="#">Городская клиническая больница № 13 Филиал Южнопортовый (бывшая ГКБ № 53)</a></li>
+		            			<li><a href="#">ОКД № 1 Филиал 1 (бывшая Городская больница № 56, ГКБ 55)</a></li>
+		            		</ul>
+		            		<a href="#" class="arrows"><i class="fa fa-angle-double-down"></i></a>
+		            		<div class="clinics-see-all">
+		            			<p><span class="count">234,789</span>клиники</p> 
+		            			<a href="#">Смотреть все на карте <i class="fa fa-angle-double-right" aria-hidden="true"></i></a>
+		            		</div>
+		            	</div>
+		            </div>
+		            <div class="col-md-9">
+		            	<div class="clinics-map">
+		            		<img src="img/map.jpg" class="img-responsive" alt="карта москвы">
+		            	</div>
+		            </div>
+	            </div>
+	        </div><!--//container-->
+	    </section>
+	    <section class="fourth-screen" id="dutydoc_scr">
+
+			<div class="orange-area"></div>
+			<div class="lightgrey-area"></div>
+	    	
+	    	
+		    <div class="header-dutydoc">
+		    	<div class="container">
+		    		<div class="row">
+		    			<div class="col-md-5 col-sm-5 text-right dutydoc-left"><h2>Дежурный врач сегодня</h2></div>
+		    			<div class="col-md-2 col-sm-2 hidden-xs">
+		    				<div class="separator-dutydoc">
+					    		<img src="img/clocks.png" height="50" width="50">
+					    	</div>
+
+		    			</div>
+		    			<div class="col-md-5  col-sm-5 text-left dutydoc-right"><p>Время работы: 8:00 - 21:00</p></div>
+		    		</div>
+		    	</div>
+		    	
+		    	
+		    </div>
+		    <div class="dutydoc-container">
+		    	<div class="container">
+		    		<div class="row">
+		    			<div class="col-md-3 text-center"><img src="img/doctor-id-img_1.jpg" class="img-responsive" alt="Селезнева Т.И"></div>
+		    			<div class="col-md-9">
+							<h3 class="dutydoc-name">Иванов Роман Евгеньевич</h3>
+							<div class="specification">
+		                		<ul>
+		                			<li><a href="#">Иглорефлексотерапевт</a></li>
+		                			<li><a href="#">Мануальный терапевт</a></li>
+		                			<li><a href="#">Невролог</a></li>
+		                			<li><a href="#">Терапевт</a></li>
+		                		</ul>
+		                	</div>
+		                	<div class="docclinic">
+		                		<p>Клиника на <a href="#">Тургенева, 14</a></p>
+		                	</div>
+		                	<p>Ipsum is simply dummy text of the printing and typesetting industry. <br> Lorem Ipsum has been the industry's standard dummy text ever since the 1500s Lorem Ipsum has been the industry's standard dummy text ever since the 1500s Lorem Ipsum has been the industry's standard dummy text ever since the 1500s Lorem Ipsum has been the industry's standard dummy text ever since the 1500s</p>
+		                	<button type="button" class="btn btn-default blue-btn">Мне нужна срочная онлайн-консультация</button>
+		    			</div>
+		    		</div>
+		    	</div>
+		    </div>
+		    <div class="container">
+			    <div class="row">
+	                <div class="col-md-12">
+	                    <a href="#" class="all-items">Смотреть всех дежурных врачей <i class="fa fa-angle-double-right" aria-hidden="true"></i></a>
+	                </div>
+	            </div>
+            </div>
+	    </section>
+	    <section class="fifth-screen" id="medcart_scr">
+	    	<div class="appscreen hidden-xs hidden-sm">
+	    		<div class="device-img">
+					<img src="img/app.png" class="img-responsive" alt="mobile app">
+				</div>
+			</div> 
+			<div class="container">
+				<div class="row">
+					<div class="col-md-12">
+						<h2 >Медкарта и дневник самоконтроля</h2>
+						<p>Lorem Ipsum has been the industry's standard dummy text ever since the 1500s Lorem Ipsum has been the industry's standard dummy text ever since the 1500s. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s Lorem Ipsum has been the industry's standard dummy text ever since the 1500s  </p>
+					</div>
+				</div>
+				
+				<div class="row">
+					<div class="appoverview col-lg-5 col-md-5 col-sm-12 col-xs-12">
+						<div class="overview-p1">
+							<h5>Ipsum is simply dummy</h5>
+							<p>text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.</p>
+							<span class="upright-arrow hidden-sm hidden-xs"></span>	
+						</div>
+						<div class="overview-p2">
+							<h5>Ipsum is simply dummy</h5>
+							<p>text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.</p>
+							<span class="downright-arrow hidden-sm  hidden-xs"></span>	
+						</div>
+						<ul class="features">
+							<li>Ipsum has been the industry's</li>
+							<li>printing and typesetting</li>
+							<li>took a galley of type and scrambled</li>
+							<li>text of the printing and typesetting industry</li>
+							<li>ever since the 1500s</li>
+						</ul>
+						<div class="download-btn-block">
+							<ul class="btn-group list-inline">
+	                            <li class="ios-btn"><a href="#">Download from the App Store</a></li>
+	                            <li class="android-btn"><a href="#">Get it from Google Play</a></li>
+	                        </ul>
+						</div>
+					</div>
+								
+				</div>
+			</div>
+	    	
+	    </section>
+	    <section class="sixth-screen" id="howwework_scr">
+			<div class="container">
+				<div class="row">
+					<div class="col-md-12">
+						<h2>Как это работает?</h2>
+					</div>
+				</div>
+				<div class="row">
+					<div class="col-md-4 steps-item text-right step-one">
+						<h3>Создайте повод</h3>
+						<p>text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book</p>
+					</div>
+					
+				</div>
+				<div class="row">
+					<div class="col-md-4  steps-item  text-right step-two">
+						<h3>Добавьте анализы</h3>
+						<p>text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book</p>
+					</div>
+					
+				</div>
+				<div class="row">
+					
+					<div class="col-md-4  steps-item  text-left step-three">
+						<h3>Получайте консультации от врачей</h3>
+						<p>text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book</p>
+					</div>
+					
+				</div>
+			</div>
+			
+	    	
+	    </section>
+	    <section class="seventh-screen">
+			<div class="container">
+				<div class="row">
+					<div class="col-md-12 text-center bottom-text">
+						<h3>Большие дела начинаются с малого</h3>
+						<p>Системный подход к здоровью за 5 минут</p>
+						<span class="small-orange-text">не является медицинской консультацией</span>
+						<button type="button" class="btn btn-default orange-btn bottom-btn">Добавить повод сейчас</button>
+					</div>
+				</div>
+			</div>
+	    	
+	    </section>
+	    <footer>
+	    	<div class="container">
+	    		<div class="row">
+	    			<div class="col-md-6 col-sm-6 text-left footer-contacts" >
+	    				<p>ООО "Рухэлснет", 194292, г. Санкт-Петербург, </br> 	Проспект Просвещения, 15, офис 148</p>
+	    			</div>
+	    			<div class="col-md-6  col-sm-6 text-right">
+	    				<div class="footer-support">
+	    					<p>cлужба поддержки</p>
+	    					<span>8-800-5555-78-2</span> 
+	    				</div>
+	    			</div>
+	    		</div>
+	    	</div>
+	    </footer>
+
+	    <div itemscope itemtype="http://schema.org/Organization" style="display:none;">
+	    	 <img itemprop="logo" src="http://www.ruhealth.net/bitrix/templates/main/images/logo.png" />
+			  <span itemprop="name">Telemed365</span>
+			  Контакты:
+			  <div itemprop="address" itemscope itemtype="http://schema.org/PostalAddress">
+			    Адрес:
+			    <span itemprop="streetAddress">Проспект Просвещения, 15</span>
+			    <span itemprop="postalCode">194292</span>
+			    <span itemprop="addressLocality">Санкт-Петербург</span>,
+			  </div>
+			  Телефон:<span itemprop="telephone">8-800-5555-78-2</span>
+		</div>
+			
+
+		
+	    <!--SCRIPTS-->
+	    <script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
+		<script src="js/bootstrap.min.js"></script>
+		<script src="js/collapse-info.js"></script>
+	</body>
+</html>

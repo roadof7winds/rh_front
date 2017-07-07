@@ -1,0 +1,375 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8">
+		<title>Telemed365.ru - результаты поиска</title>
+		
+		<link rel="stylesheet" href="css/bootstrap.min.css">
+		<link rel="stylesheet" href="css/bootstrap-modal.css">
+		<link rel="stylesheet" href="font-awesome/css/font-awesome.min.css">
+		<link rel="stylesheet" type="text/css" href="css/front.css">
+		<link href="https://fonts.googleapis.com/css?family=Roboto:100,300,400,500,700" rel="stylesheet">
+		<link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700" rel="stylesheet">
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=1">
+		<meta name="apple-mobile-web-app-capable" content="yes">
+		<meta name="apple-mobile-web-app-status-bar-style" content="black">
+		
+	</head>
+	<body>
+		<div id="authorize" class="modal fade modal-auth" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+             <div class="modal-dialog" role="document">
+                <div class="modal-content" style="padding: 15px;">
+                    <div class="modal-header text-center">
+                        <button class="close" type="button" data-dismiss="modal">×</button>
+                       	<h4>Моя учетная запись</h4>
+                    </div>
+                    <div class="modal-body text-center">
+                    	<form id="modal-form-auth">
+						  <div  class="form-group">
+						    <input name="UserName" type="text" class="form-control" id="UserName" placeholder="Логин/e-mail*" required="required">
+						  </div>
+						  <div  class="form-group">
+						    <input name="Password" type="password" class="form-control password" id="Password" placeholder="Пароль" required="required">
+						    <a class="forgot" href="https://p.ruhealth.net/Auth/NewUser/RecoverPassword">Забыли пароль?</a>
+						  </div>
+						  <button type="button" class="btn btn-default navbar-btn orange-btn">Войти в аккаунт</button>
+						</form>
+                        
+                        <div class="auth-social-block">
+                        	<div class="delimiter">или</div>
+                        	<p>Войти с помощью социальной сети</p>
+                        	<div class="row">
+					          <div class="col-md-4">
+
+								<div class="td_social_type td-pb-margin-side td_social_facebook"><div class="td-sp td-sp-facebook"></div></div>
+
+					          </div>
+					          <div class="col-md-4">
+
+								<div class="td_social_type td-pb-margin-side td_social_googleplus"><div class="td-sp td-sp-googleplus"></div></div>
+
+					          </div>
+					          <div class="col-md-4">
+
+								<div class="td_social_type td-pb-margin-side td_social_vk"><div class="td-sp td-sp-vk"></div></div>
+
+
+					          </div>
+					        </div>
+                        </div>
+                    </div>
+                    <div class="modal-footer">
+                        <p>Нет аккаунта? <a href="https://p.ruhealth.net/Auth/NewUser/AccountType">Зарегистрируйтесь тут!</a></p>
+                    </div>
+                </div>
+            </div>
+        </div>   	
+		<nav class="navbar navbar-default navbar-fixed-top header-menu">
+		  <div class="container">
+		   
+		    <div class="navbar-header">
+		      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#top-navbar-collapse" aria-expanded="false">
+		        <span class="sr-only">Toggle navigation</span>
+		        <span class="icon-bar"></span>
+		        <span class="icon-bar"></span>
+		        <span class="icon-bar"></span>
+		      </button>
+		      <a class="navbar-brand logo" href="#">
+				<img src="http://www.ruhealth.net/bitrix/templates/main/images/logo.png" class="logo-image">
+		      </a>
+		    </div>
+
+		   
+		    <div class="collapse navbar-collapse navbar-right top-menu" id="top-navbar-collapse">
+		      <ul class="nav navbar-nav">
+		        <li class="nav-item"><a href="#dutydoc_scr">Дежурный врач</a></li>
+                <li class="nav-item"><a href="#doctors_scr">Врачи</a></li>
+                <li class="nav-item"><a href="#clinics_scr">Клиники</a></li>
+                <li class="nav-item"><a href="#medcart_scr">Медкарта</a></li>
+                <li class="nav-item"><a href="#howwework_scr">Как мы работаем</a></li>
+                <li class="nav-item"><a href="#contact_scr">Вопросы</a></li>
+                <li class="nav-item last"><a href="#"><img src="img/search-icon.png" class="search-icon"></a></li> 
+		      </ul>
+		      <button type="button" class="btn btn-default navbar-btn orange-btn big-signup-btn" data-toggle="modal" data-target="#authorize">Войти в аккаунт</button>
+		      <button type="button" class="btn btn-default navbar-btn orange-btn small-signup-btn"  data-toggle="modal" data-target="#authorize"><i class="fa fa-sign-in" aria-hidden="true"></i></button>
+		    </div><!-- /.navbar-collapse -->
+		  </div><!-- /.container -->
+		</nav>
+		
+		<div class="container">
+    		<div class="row">
+		    	<div class="col-md-12 doctor-list-header">
+		    		<h2>"Врачи кардиологи"</h2> <span>результаты поиска</span>
+		    	</div>
+	    	</div>
+	    </div>
+
+	    <section class="doctor-list-result">
+	    	<div class="container">
+	    		<div class="row">
+			    	<div class="search-doctor-block col-md-12">
+			    		<form class="search-doctor-form">
+			    			<div class="col-md-5">
+			    				<input type="text" class="form-control" id="specification" placeholder="кардиолог">
+			    			</div>
+			    			<div class="col-md-5"> 
+			    				<input type="text" class="form-control" id="place" placeholder="Место:город,район,станция метро">
+			    			</div>
+			    			<div class="col-md-2">
+			    				<button type="submit" class="btn btn-default blue-btn">Искать</button>
+			    			</div>
+						</form>
+			    	</div>
+			    </div>
+			    <div class="row">
+			    	<div class="search-addon">
+			    		<div class="search-count col-md-6">
+			    			<span>Найдено: <span class="search-count-value">16</span> докторов в <span class="search-count-city">Санкт-Петербурге</span></span>
+				    	</div>
+				    	<div class="search-sort col-md-6 text-right">
+				    		<span>Сортировать по:</span> 
+				    		<select class="form-control search-sort-select">
+							     <option disabled selected value="" style="display:none;">клинике</option>
+							     <option>метро</option>
+							     <option>специализации</option>
+							</select>
+				    	</div>
+			    	</div>
+			    	
+		    	</div>
+		    </div>
+		    <div class="container">
+		    	<div class="row">
+			    	<div class="by-clinic">
+			    		<div class="col-md-12 clinic-header">
+			    			<ul>
+								<li>
+									<h4>Клиника на Вавилова, 16</h4>
+									<a href="#" class="collapse-clinic-info">свернуть</a>
+								</li>
+							</ul>
+			    		</div>
+						<div class="clinic-info-block col-md-12">
+							<div class="clinic-address col-md-8 col-sm-8">
+				    			<p>г.Санкт-Петербург, ул.Вавилова 16</p>
+				    			<div class="clinic-metro"><span class="metroicon">М</span><p>Технологический институт</p></div>
+				    			<a href="#">Смотреть на карте</a> <a href="#"  class="collapse-clinic-info">Схема проезда</a>
+					    	</div>
+					    	<div class="clinic-phone col-md-4  col-sm-4 text-right">
+					    		<p>телефон регистратуры</p>
+					    		<p class="big-fontsize">(078)123-23-23</p>
+					    	</div>
+						</div>
+			    		
+			    	</div>
+			    	
+		    	</div>
+		    </div>
+
+		    <div class="doctor-container">
+		    	<div class="container">
+		    		<div class="row">
+		    			<div class="col-md-3 col-md-3 text-center"><a href="doctor_details.html"><img src="img/doctor-id-img_1.jpg" class="img-responsive" alt="Селезнева Т.И"></a></div>
+		    			<div class="col-md-9" style="position: relative;">
+							<h3 class="dutydoc-name">Иванов Роман Евгеньевич</h3>
+							<div class="dutydoc-fav">
+								<input type="radio" id="addfav" name="favorite"  checked value="favdoc" />
+								<label class="fav-heart" for="addfav" title="Добавить в Мои Врачи"></label>
+							</div>
+							<div class="rating-block">
+								<span class="docscores-stars docscores-stars35"></span>
+								<a href="#">15 отзывов</a>
+							</div>
+							<div class="specification">
+								<div class="row">
+									<div class="col-md-8 col-sm-8 specification-list">
+										<ul>
+				                			<li><a href="#">Иглорефлексотерапевт</a></li>
+				                			<li><a href="#">Мануальный терапевт</a></li>
+				                			<li><a href="#">Невролог</a></li>
+				                			<li><a href="#">Терапевт</a></li>
+				                		</ul>
+									</div>
+									<div class="col-md-4  col-sm-4 consult-cost">
+										<p>стоимость приёма</p>
+										<p class="big-fontsize">1,500 руб.</p>
+									</div>
+								</div>
+								
+								
+		                	</div>
+		                	
+		                	<p>Ipsum is simply dummy text of the printing and typesetting industry. <br> Lorem Ipsum has been the industry's standard dummy text ever since the 1500s Lorem Ipsum has been the industry's standard dummy text ever since the 1500s Lorem Ipsum has been the industry's standard dummy text ever since the 1500s Lorem Ipsum has been the industry's standard dummy text ever since the 1500s</p>
+		                	<button type="button" class="btn btn-default blue-btn">Онлайн консультация</button>
+		                	<button type="button" class="btn btn-default blue-btn">Онлайн приём</button>
+		                	<button type="button" class="btn btn-default blue-btn">Очный приём</button>
+		    			</div>
+		    		</div>
+		    	</div>
+		    </div>
+		     <div class="doctor-container">
+		    	<div class="container">
+		    		<div class="row">
+		    			<div class="col-md-3 col-md-3 text-center"><a href="doctor_details.html"><img src="img/doctor-id-img_1.jpg" class="img-responsive" alt="Селезнева Т.И"></a></div>
+		    			<div class="col-md-9" style="position: relative;">
+							<h3 class="dutydoc-name">Иванов Роман Евгеньевич</h3>
+							<div class="dutydoc-fav">
+								<input type="radio" id="addfav" name="favorite" value="favdoc" />
+								<label class="fav-heart" for="addfav" title="Добавить в Мои Врачи"></label>
+							</div>
+							<div class="rating-block">
+								<span class="docscores-stars docscores-stars15"></span>
+								<a href="#">15 отзывов</a>
+							</div>
+							<div class="specification">
+								<div class="row">
+									<div class="col-md-8 col-sm-8 specification-list">
+										<ul>
+				                			<li><a href="#">Иглорефлексотерапевт</a></li>
+				                			<li><a href="#">Мануальный терапевт</a></li>
+				                			<li><a href="#">Невролог</a></li>
+				                			<li><a href="#">Терапевт</a></li>
+				                		</ul>
+									</div>
+									<div class="col-md-4  col-sm-4 consult-cost">
+										<p>стоимость приёма</p>
+										<p class="big-fontsize">1,500 руб.</p>
+									</div>
+								</div>
+								
+								
+		                	</div>
+		                	
+		                	<p>Ipsum is simply dummy text of the printing and typesetting industry. <br> Lorem Ipsum has been the industry's standard dummy text ever since the 1500s Lorem Ipsum has been the industry's standard dummy text ever since the 1500s Lorem Ipsum has been the industry's standard dummy text ever since the 1500s Lorem Ipsum has been the industry's standard dummy text ever since the 1500s</p>
+		                	<button type="button" class="btn btn-default blue-btn">Онлайн консультация</button>
+		                	<button type="button" class="btn btn-default blue-btn">Онлайн приём</button>
+		                	<button type="button" class="btn btn-default blue-btn">Очный приём</button>
+		    			</div>
+		    		</div>
+		    	</div>
+		    </div>
+			<div class="container">
+		    	<div class="row">
+			    	<div class="by-clinic">
+			    		<div class="col-md-12 clinic-header">
+			    			<ul>
+								<li>
+									<h4>Клиника на Вавилова, 16</h4>
+									<a href="#" class="collapse-clinic-info">свернуть</a>
+								</li>
+							</ul>
+			    		</div>
+						<div class="clinic-info-block col-md-12">
+							<div class="clinic-address col-md-8 col-sm-8">
+				    			<p>г.Санкт-Петербург, ул.Вавилова 16</p>
+				    			<div class="clinic-metro"><span class="metroicon">М</span><p>Технологический институт</p></div>
+				    			<a href="#">Смотреть на карте</a> <a href="#">Схема проезда</a>
+					    	</div>
+					    	<div class="clinic-phone col-md-4  col-sm-4 text-right">
+					    		<p>телефон регистратуры</p>
+					    		<p class="big-fontsize">(078)123-23-23</p>
+					    	</div>
+						</div>
+			    		
+			    	</div>
+			    	
+		    	</div>
+		    </div>
+		     <div class="doctor-container">
+		    	<div class="container">
+		    		<div class="row">
+		    			<div class="col-md-3 col-md-3 text-center"><a href="doctor_details.html"><img src="img/doctor-id-img_1.jpg" class="img-responsive" alt="Селезнева Т.И"></a></div>
+		    			<div class="col-md-9" style="position: relative;">
+							<h3 class="dutydoc-name">Иванов Роман Евгеньевич</h3>
+							<div class="dutydoc-fav">
+								<input type="radio" id="addfav" name="favorite" value="favdoc" />
+								<label class="fav-heart" for="addfav" title="Добавить в Мои Врачи"></label>
+							</div>
+							<div class="rating-block">
+								<span class="docscores-stars docscores-stars5"></span>
+								<a href="#">15 отзывов</a>
+							</div>
+							<div class="specification">
+								<div class="row">
+									<div class="col-md-8 col-sm-8 specification-list">
+										<ul>
+				                			<li><a href="#">Иглорефлексотерапевт</a></li>
+				                			<li><a href="#">Мануальный терапевт</a></li>
+				                			<li><a href="#">Невролог</a></li>
+				                			<li><a href="#">Терапевт</a></li>
+				                		</ul>
+									</div>
+									<div class="col-md-4  col-sm-4 consult-cost">
+										<p>стоимость приёма</p>
+										<p class="big-fontsize">1,500 руб.</p>
+									</div>
+								</div>
+								
+								
+		                	</div>
+		                	
+		                	<p>Ipsum is simply dummy text of the printing and typesetting industry. <br> Lorem Ipsum has been the industry's standard dummy text ever since the 1500s Lorem Ipsum has been the industry's standard dummy text ever since the 1500s Lorem Ipsum has been the industry's standard dummy text ever since the 1500s Lorem Ipsum has been the industry's standard dummy text ever since the 1500s</p>
+		                	<button type="button" class="btn btn-default blue-btn">Онлайн консультация</button>
+		                	<button type="button" class="btn btn-default blue-btn">Онлайн приём</button>
+		                	<button type="button" class="btn btn-default blue-btn">Очный приём</button>
+		    			</div>
+		    		</div>
+		    	</div>
+		    </div>
+		    <div class="container">
+			    <div class="row">
+	                <div class="col-md-12 text-center">
+	                    <button type="button" class="btn btn-default orange-btn more-btn">Загрузить еще</button>
+	                </div>
+	            </div>
+            </div>
+	    </section>
+
+	    <section class="seventh-screen">
+			<div class="container">
+				<div class="row">
+					<div class="col-md-12 text-center bottom-text">
+						<h3>Большие дела начинаются с малого</h3>
+						<p>Системный подход к здоровью за 5 минут</p>
+						<span class="small-orange-text">не является медицинской консультацией</span>
+						<button type="button" class="btn btn-default orange-btn bottom-btn">Добавить повод сейчас</button>
+					</div>
+				</div>
+			</div>
+	    	
+	    </section>
+	    <footer>
+	    	<div class="container">
+	    		<div class="row">
+	    			<div class="col-md-6 col-sm-6 text-left footer-contacts" >
+	    				<p>ООО "Рухэлснет", 194292, г. Санкт-Петербург, </br> 	Проспект Просвещения, 15, офис 148</p>
+	    			</div>
+	    			<div class="col-md-6  col-sm-6 text-right">
+	    				<div class="footer-support">
+	    					<p>cлужба поддержки</p>
+	    					<span>8-800-5555-78-2</span> 
+	    				</div>
+	    			</div>
+	    		</div>
+	    	</div>
+	    </footer>
+
+	    <div itemscope itemtype="http://schema.org/Organization" style="display:none;">
+	    	 <img itemprop="logo" src="http://www.ruhealth.net/bitrix/templates/main/images/logo.png" />
+			  <span itemprop="name">Telemed365</span>
+			  Контакты:
+			  <div itemprop="address" itemscope itemtype="http://schema.org/PostalAddress">
+			    Адрес:
+			    <span itemprop="streetAddress">Проспект Просвещения, 15</span>
+			    <span itemprop="postalCode">194292</span>
+			    <span itemprop="addressLocality">Санкт-Петербург</span>,
+			  </div>
+			  Телефон:<span itemprop="telephone">8-800-5555-78-2</span>
+		</div>
+
+	    <!--SCRIPTS-->
+	    <script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
+		<script src="js/bootstrap.min.js"></script>
+		<script src="js/collapse-info.js"></script>
+	</body>
+</html>

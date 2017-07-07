@@ -1,0 +1,492 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8">
+		<title>Telemed365.ru - результаты поиска</title>
+		
+		<link rel="stylesheet" href="css/bootstrap.min.css">
+		<link rel="stylesheet" href="css/bootstrap-modal.css">
+		<link rel="stylesheet" href="font-awesome/css/font-awesome.min.css">
+		<link rel="stylesheet" type="text/css" href="css/front.css">
+		<link rel="stylesheet" type="text/css" href="css/timetable.css">
+		<link href="https://fonts.googleapis.com/css?family=Roboto:100,300,400,500,700" rel="stylesheet">
+		<link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700" rel="stylesheet">
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=1">
+		<meta name="apple-mobile-web-app-capable" content="yes">
+		<meta name="apple-mobile-web-app-status-bar-style" content="black">
+		
+	</head>
+	<body>
+		<div id="authorize" class="modal fade modal-auth" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+             <div class="modal-dialog" role="document">
+                <div class="modal-content" style="padding: 15px;">
+                    <div class="modal-header text-center">
+                        <button class="close" type="button" data-dismiss="modal">×</button>
+                       	<h4>Моя учетная запись</h4>
+                    </div>
+                    <div class="modal-body text-center">
+                    	<form id="modal-form-auth">
+						  <div  class="form-group">
+						    <input name="UserName" type="text" class="form-control" id="UserName" placeholder="Логин/e-mail*" required="required">
+						  </div>
+						  <div  class="form-group">
+						    <input name="Password" type="password" class="form-control password" id="Password" placeholder="Пароль" required="required">
+						    <a class="forgot" href="https://p.ruhealth.net/Auth/NewUser/RecoverPassword">Забыли пароль?</a>
+						  </div>
+						  <button type="button" class="btn btn-default navbar-btn orange-btn">Войти в аккаунт</button>
+						</form>
+                        
+                        <div class="auth-social-block">
+                        	<div class="delimiter">или</div>
+                        	<p>Войти с помощью социальной сети</p>
+                        	<div class="row">
+					          <div class="col-md-4">
+
+								<div class="td_social_type td-pb-margin-side td_social_facebook"><div class="td-sp td-sp-facebook"></div></div>
+
+					          </div>
+					          <div class="col-md-4">
+
+								<div class="td_social_type td-pb-margin-side td_social_googleplus"><div class="td-sp td-sp-googleplus"></div></div>
+
+					          </div>
+					          <div class="col-md-4">
+
+								<div class="td_social_type td-pb-margin-side td_social_vk"><div class="td-sp td-sp-vk"></div></div>
+
+
+					          </div>
+					        </div>
+                        </div>
+                    </div>
+                    <div class="modal-footer">
+                        <p>Нет аккаунта? <a href="https://p.ruhealth.net/Auth/NewUser/AccountType">Зарегистрируйтесь тут!</a></p>
+                    </div>
+                </div>
+            </div>
+        </div>   	
+		<nav class="navbar navbar-default navbar-fixed-top header-menu">
+		  <div class="container">
+		   
+		    <div class="navbar-header">
+		      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#top-navbar-collapse" aria-expanded="false">
+		        <span class="sr-only">Toggle navigation</span>
+		        <span class="icon-bar"></span>
+		        <span class="icon-bar"></span>
+		        <span class="icon-bar"></span>
+		      </button>
+		      <a class="navbar-brand logo" href="#">
+				<img src="http://www.ruhealth.net/bitrix/templates/main/images/logo.png" class="logo-image">
+		      </a>
+		    </div>
+
+		   
+		    <div class="collapse navbar-collapse navbar-right top-menu" id="top-navbar-collapse">
+		      <ul class="nav navbar-nav">
+		        <li class="nav-item"><a href="#dutydoc_scr">Дежурный врач</a></li>
+                <li class="nav-item"><a href="#doctors_scr">Врачи</a></li>
+                <li class="nav-item"><a href="#clinics_scr">Клиники</a></li>
+                <li class="nav-item"><a href="#medcart_scr">Медкарта</a></li>
+                <li class="nav-item"><a href="#howwework_scr">Как мы работаем</a></li>
+                <li class="nav-item"><a href="#contact_scr">Вопросы</a></li>
+                <li class="nav-item last"><a href="#"><img src="img/search-icon.png" class="search-icon"></a></li> 
+		      </ul>
+		      <button type="button" class="btn btn-default navbar-btn orange-btn big-signup-btn" data-toggle="modal" data-target="#authorize">Войти в аккаунт</button>
+		      <button type="button" class="btn btn-default navbar-btn orange-btn small-signup-btn"  data-toggle="modal" data-target="#authorize"><i class="fa fa-sign-in" aria-hidden="true"></i></button>
+		    </div><!-- /.navbar-collapse -->
+		  </div><!-- /.container -->
+		</nav>
+		
+		<div class="container">
+    		<div class="row">
+		    	<div class="col-md-12 doctor-list-header">
+		    		<h2>Иванов Роман Евгеньевич</h2>
+		    		<ol class="breadcrumb header-breadcrumb">
+					  <li><a href="subcat.html">Клиника на Вавилова</a></li>
+					  <li class="active">Кардиология</li>
+					</ol>
+		    		<div class="dutydoc-fav">
+						<input type="radio" id="addfav" name="favorite"  checked value="favdoc" />
+						<label class="fav-heart" for="addfav" title="Добавить в Мои Врачи"></label>
+					</div> 
+		    	</div>
+	    	</div>
+	    </div>
+
+	    <section class="doctor-list-result">
+		    <div class="doctor-container">
+		    	<div class="container">
+		    		<div class="row">
+		    			<div class="col-md-3 col-md-3 text-center doctor-img-block">
+		    				<img src="img/doctor-default.jpg" class="img-responsive" alt="Селезнева Т.И">
+		    				<div class="rating-block">
+								<span class="docscores-stars docscores-stars35"></span>
+								<a href="#" class="doc-details-review">15 отзывов</a>
+								<button type="button" class="btn">Добавить отзыв</button>
+							</div>
+		    			</div>
+		    			<div class="col-md-9" style="position: relative;">
+							<h4 class="red-line-header">Специализация</h4>
+							<div class="specification">
+
+								<div class="row">
+									<div class="col-md-8 col-sm-8 specification-list">
+										<ul>
+				                			<li><a href="#">Иглорефлексотерапевт</a></li>
+				                			<li><a href="#">Мануальный терапевт</a></li>
+				                			<li><a href="#">Невролог</a></li>
+				                			<li><a href="#">Терапевт</a></li>
+				                		</ul>
+									</div>
+									<div class="col-md-4  col-sm-4 consult-cost">
+										<p>стоимость приёма</p>
+										<p class="big-fontsize">1,500 руб.</p>
+									</div>
+								</div>
+								
+								
+		                	</div>
+		                	<h4 class="red-line-header">Квалификация</h4>
+		                	<p>Кандидат медицинских наук. Доцент. </br>Стаж 15 лет</p>
+		                	<h4 class="red-line-header">Место работы</h4>
+		                	
+								<div class="clinic-info-block col-md-12">
+									<div class="row">
+										<div class="clinic-address col-md-8 col-sm-8">
+											<a href="#">Клиника на Вавилова, 16</a>
+							    			<p>г.Санкт-Петербург, ул.Вавилова 16</p>
+							    			<div class="clinic-metro"><span class="metroicon">М</span><p>Технологический институт</p></div>
+							    			<a href="#">Смотреть на карте</a> <a href="#"  class="collapse-clinic-info">Схема проезда</a>
+								    	</div>
+								    	<div class="clinic-phone col-md-4 col-sm-4 text-right">
+								    		<p>телефон регистратуры</p>
+								    		<p class="big-fontsize">(078)123-23-23</p>
+								    	</div>
+							    	</div>
+								</div>
+								<div class="blue-btn-block">
+									<button type="button" id="btn_consult_online" class="btn btn-default blue-btn">Онлайн консультация</button>
+				                	<button type="button" id="btn_visit_online"  class="btn btn-default blue-btn">Онлайн приём</button>
+				                	<button type="button" id="btn_visit_offline" class="btn btn-default blue-btn">Очный приём</button>
+								</div>
+
+		                	
+		    			</div>
+		    		</div>
+		    		<div class="row doctor-info-block">
+			    		<div class="col-md-12 doctor-info-header">
+			    			<ul>
+								<li>
+									<h4>О враче</h4>
+									<a href="#" class="collapse-doctor-info">свернуть</a>
+								</li>
+							</ul>
+			    		</div>
+						<div class="doctor-info-article col-md-12">
+							<p>В 2002 году окончил Санкт-Петербургский Государственный Медицинский Университет имени академика И.П. Павлова по специальности лечебное дело. За время учебы в Университете принимал активное участие в работе студенческих научных обществ на кафедрах патофизиологии, факультетской хирургии и факультетской терапии. Под руководством сотрудников кафедры вел экспериментальную и клиническую научную работу в рамках исследований кафедр. В 2000 году награжден памятной медалью П.М. Альбицкого за лучший доклад на конференции молодых ученых. В том же году награжден дипломом правительства Санкт-Петербурга за лучшую студенческую работу на общегородском конкурсе грантов. В 2003 году окончил обучение в интернатуре по общей хирургии при Комитете по здравоохранению Санкт-Петербурга. Получил сертификат специалиста по общей хирургии. В 2005 году окончил обучение в клинической ординатуре по специальности сердечно-сосудистая хирургия при Научно-исследовательском институте кардиологии имени В.А. Алмазова.</p>
+		    			</div>
+		    		</div>
+		    		<div class="row doctor-info-block">
+			    		<div class="col-md-12 doctor-info-header">
+			    			<ul>
+								<li>
+									<h4>Образование</h4>
+									<a href="#" class="collapse-doctor-info">свернуть</a>
+								</li>
+							</ul>
+			    		</div>
+						<div class="doctor-info-article col-md-12">
+							<p>Получил сертификат специалиста по сердечно-сосудистой хирургии. С 2005 по июль 2008 года обучался в очной аспирантуре при Научно-исследовательском институте кардиологии имени В.А. Алмазова. В декабре 2007 года защитил кандидатскую диссертацию на тему "Оптимизация применения внутриаортальной баллонной контрпульсации у больных ишемической болезнью сердца с высоким риском оперативного вмешательств" <br/>Обучаясь в клинической ординатуре и аспирантуре, работал совместителем на отделении сердечно-сосудистой хирургии, в лабораториях информационных технологий, метаболизма миокарда, принимая активное участие в клинической и научной деятельности данных подразделений. Входил в состав оргкомитетов всех конгрессов и конференций, организованных институтом в период с 2002-20012 годы. и биопротезирования ФГБУ ФЦСКЭ имени В.А. Алмазова. <br/>Является членом Российской Ассоциации сердечно-сосудистых хирургов, членом всемирной организации кардиоторакальных хирургов CTSNet.</p>
+		    			</div>
+		    		</div>
+		    		<div class="row doctor-info-block">
+			    		<div class="col-md-12 doctor-info-header">
+			    			<ul>
+								<li>
+									<h4>Отзывы (15)</h4>
+									<a href="#" class="collapse-doctor-info">свернуть</a>
+								</li>
+							</ul>
+			    		</div>
+						<div class="doctor-info-article">
+							<div class="col-md-6 doctor-review">
+								<div class="review-header">
+									<span class="review-header-name">Василий Пупкин</span>
+									<span class="review-header-date">08 июня 2017</span>
+								</div>
+								<span class="docscores-stars docscores-stars35"></span>
+								<div class="review-body">
+									<p>Хочу поблагодарить прекрасного врача за помощь и консультации. Я очень боялась делать лазерную коррекцию, но зрение стало меня подводить и я решилась. Долго сомневалась. Но врач убедил, что бояться нечего и оказался прав. Благодаря его поддержке и помощи я теперь замечательно себя чувствую и всем советую не бояться. </p>
+								</div>
+							</div>
+							<div class="col-md-6 doctor-review">
+								<div class="review-header">
+									<span class="review-header-name">Василий Пупкин</span>
+									<span class="review-header-date">08 июня 2017</span>
+								</div>
+								<span class="docscores-stars docscores-stars35"></span>
+								<div class="review-body">
+									<p>Хочу поблагодарить прекрасного врача за помощь и консультации. Я очень боялась делать лазерную коррекцию, но зрение стало меня подводить и я решилась. Долго сомневалась. Но врач убедил, что бояться нечего и оказался прав. Благодаря его поддержке и помощи я теперь замечательно себя чувствую и всем советую не бояться. </p>
+								</div>
+							</div>
+							<div class="col-md-6 doctor-review">
+								<div class="review-header">
+									<span class="review-header-name">Василий Пупкин</span>
+									<span class="review-header-date">08 июня 2017</span>
+								</div>
+								<span class="docscores-stars docscores-stars35"></span>
+								<div class="review-body">
+									<p>Хочу поблагодарить прекрасного врача за помощь и консультации. Я очень боялась делать лазерную коррекцию, но зрение стало меня подводить и я решилась. Долго сомневалась. Но врач убедил, что бояться нечего и оказался прав. Благодаря его поддержке и помощи я теперь замечательно себя чувствую и всем советую не бояться. </p>
+								</div>
+							</div>
+							<div class="col-md-6 doctor-review">
+								<div class="review-header">
+									<span class="review-header-name">Василий Пупкин</span>
+									<span class="review-header-date">08 июня 2017</span>
+								</div>
+								<span class="docscores-stars docscores-stars35"></span>
+								<div class="review-body">
+									<p>Хочу поблагодарить прекрасного врача за помощь и консультации. Я очень боялась делать лазерную коррекцию, но зрение стало меня подводить и я решилась. Долго сомневалась. Но врач убедил, что бояться нечего и оказался прав. Благодаря его поддержке и помощи я теперь замечательно себя чувствую и всем советую не бояться. </p>
+								</div>
+							</div>
+							<div class="col-md-12 blue-btn-block">
+				    			<button type="button" class="btn btn-default blue-btn">Я хочу добавить отзыв</button>
+				    			<a href="#" target="_blank" class="safety-rules">Смотреть Правила политики конфиденциальности</a>
+				    		</div>
+							
+		    			</div>
+		    		</div>
+		    	
+		    
+				    <div class="row">
+		            	<div class="col-md-12  text-center section-heading">
+		            		<div class="separator"><img src="img/separator-doctors.png" height="40" width="40"></div>
+			            	<h2>Похожие врачи</h2>
+			            	
+			            </div>
+			            
+			            <div class="col-md-3 col-sm-6  col-xs-12">
+		                	<div class="doctor-item text-center">
+			                	<div class="doctor-item-mainpage  text-center"><img src="img/doctor-id-img.jpg" class="img-responsive" alt="Селезнева Т.И"></div>
+			                	<h4 class="deepblue-header"><a href="#">Селезнева Т.И.</a></h4>
+			                	<p class="specif-paragraph">Lorem Ipsum is simply dummy text of the printing and typesetting industry.</p>
+			                </div>
+		                	<div class="specification">
+		                		<ul>
+		                			<li><a href="#">Кардиолог</a></li>
+		                			<li><a href="#">Хирург</a></li>
+		                			<li><a href="#">Сердечно-сосудистый хирург</a></li>
+		                		</ul>
+		                	</div>
+		                	<div class="docclinic">
+		                		<p>Клиника на <a href="#">Тургенева, 14</a></p>
+		                	</div>
+			            </div>
+			                
+		                <div class="col-md-3 col-sm-6  col-xs-12">
+		                	<div class="doctor-item text-center">
+			                	<div class="doctor-item-mainpage"><img src="img/doctor-id-img_1.jpg" class="img-responsive" alt="Селезнева Т.И"></div>
+			                	<h4 class="deepblue-header"><a href="#">Селезнева Т.И.</a></h4>
+			                	<p class="specif-paragraph">Lorem Ipsum is simply dummy text of the printing and typesetting industry.</p>
+			                </div>
+			                <div class="specification">
+		                		<ul>
+		                			<li><a href="#">Ортопед</a></li>
+		                			<li><a href="#">Хирург</a></li>
+		                			<li><a href="#">Травматолог</a></li>
+		                		</ul>
+		                	</div>
+		                	<div class="docclinic">
+		                		<p>Клиника на <a href="#">Тургенева, 14</a></p>
+		                	</div>
+		                </div>
+		                <div class="col-md-3 col-sm-6  col-xs-12">
+		                	<div class="doctor-item text-center">
+			                	<div class="doctor-item-mainpage"><img src="img/doctor-id-img_2.jpg" class="img-responsive" alt="Селезнева Т.И"></div>
+			                	<h4 class="deepblue-header"><a href="#">Селезнева Т.И.</a></h4>
+			                	<p class="specif-paragraph">Lorem Ipsum is simply dummy text of the printing and typesetting industry.</p>
+			                </div>
+			                <div class="specification">
+		                		<ul>
+		                			<li><a href="#">Акушер-гинеколог</a></li>
+		                			<li><a href="#">УЗИ-врач</a></li>
+		                			<li><a href="#">Эндокринолог</a></li>
+		                		</ul>
+		                	</div>
+		                	<div class="docclinic">
+		                		<p>Клиника на <a href="#">Тургенева, 14</a></p>
+		                	</div>
+		                </div>
+		                <div class="col-md-3 col-sm-6  col-xs-12">
+		                	<div class="doctor-item text-center">
+			                	<div class="doctor-item-mainpage"><img src="img/doctor-id-img.jpg" class="img-responsive" alt="Селезнева Т.И"></div>
+			                	<h4 class="deepblue-header"><a href="#">Селезнева Т.И.</a></h4>
+			                	<p class="specif-paragraph">Lorem Ipsum is simply dummy text of the printing and typesetting industry.</p>
+			                </div>
+			                <div class="specification">
+		                		<ul>
+		                			<li><a href="#">Иглорефлексотерапевт</a></li>
+		                			<li><a href="#">Мануальный терапевт</a></li>
+		                			<li><a href="#">Невролог</a></li>
+		                			<li><a href="#">Терапевт</a></li>
+		                		</ul>
+		                	</div>
+		                	<div class="docclinic">
+		                		<p>Клиника на <a href="#">Тургенева, 14</a></p>
+		                	</div>
+		                </div>
+		                
+		                
+			        </div>
+		            <div class="row">
+		                <div class="col-md-12 text-center">
+		                    <a href="#" class="all-items">Смотреть всех 1280 врачей <i class="fa fa-angle-double-right" aria-hidden="true"></i></a>
+		                </div>
+		            </div>
+		        </div>
+		    </div>
+
+		<!--sidebar-timetable-->
+		<div class="sibebar-timetable">
+ 				<div class="shedule">
+                        
+                    <form class="shedule-form relative"  id="doctor-visit" action="" method="post"> 
+                        <table class="shedule-table">
+                            <tbody>
+                                <tr class="shedule-box">
+                                    <td class="shedule-info">
+                                        <div class="relative ap_cal">
+                                            <div id="calendar">
+                                                <div class="new-calendar">
+                                                    <span class="shedule_item_name">Запись на прием</span>
+                                                    <div class="picker">
+                                                        <div class="picker-arrow arrow-right" data-type="forward">
+                                                            <i class="fa fa-angle-right" aria-hidden="true"></i>
+                                                        </div>
+                                                        <div class="picker-arrow arrow-left" data-type="back">
+                                                            <i class="fa fa-angle-left" aria-hidden="true"></i>
+                                                        </div>
+                                                        <div class="input-picker">
+                                                        	<div title="пн. 12 июн" class="btn day-picker"><p>пн.</p> <p>12 июн</p></div>
+	                                                        <div title="вт. 13 июн"  class="btn day-picker"><p>вт.</p> <p>13 июн</p></div>
+	                                                        <div title="ср. 14 июн"  class="btn day-picker"><p>ср.</p> <p>14 июн</p></div>
+
+                                                        </div>
+                                                    </div>
+                                                    
+                                                    </div>
+                                                    <div class="new-calendar" style="display: block;">
+                                                        <a visitstart="08:00" visitend="" id="08:00-" title="08:00" class="btn " href="#">08:00</a>
+                                                        <a visitstart="08:30" visitend="" id="08:30-" title="08:30" class="btn " href="#">08:30</a>
+                                                        <a visitstart="09:00" visitend="" id="09:00-" title="09:00" class="btn " href="#">09:00</a>
+                                                        <a visitstart="12:00" visitend="" id="12:00-" title="12:00" class="btn " href="#">12:00</a>
+                                                        <a visitstart="12:30" visitend="" id="12:30-" title="12:30" class="btn " href="#">12:30</a>
+                                                        <a visitstart="13:00" visitend="" id="13:00-" title="13:00" class="btn inactive-time" href="#">—</a>
+                                                        <a visitstart="13:30" visitend="" id="13:30-" title="13:30" class="btn inactive-time" href="#">—</a>
+                                                        <a visitstart="14:00" visitend="" id="14:00-" title="14:00" class="btn " href="#">14:00</a>
+                                                        <a visitstart="14:30" visitend="" id="14:30-" title="14:30" class="btn " href="#">14:30</a>
+                                                        <a visitstart="15:00" visitend="" id="15:00-" title="15:00" class="btn inactive-time" href="#">—</a>
+                                                        <a visitstart="19:30" visitend="" id="19:30-" title="19:30" class="btn " href="#">19:30</a>
+                                                        <a visitstart="20:00" visitend="" id="20:00-" title="20:00" class="btn inactive-time" href="#">—</a>
+                                                        <a visitstart="20:30" visitend="" id="20:30-" title="20:30" class="btn " href="#">20:30</a> 
+                                                    </div>
+                                                </div>
+                                                
+                                            </div>
+                                                
+                                             
+                                        </div>
+                                    </td>
+                                </tr>
+                                <tr class="shedule-box odd">
+                                    <td class="shedule-info">
+                                        <button class="btn btn-default blue-btn" type="button" data-toggle="modal" data-target="#shedule-confirm">Записаться</button>
+                                        <button type="button" class="btn btn-default close-btn" data-dismiss="modal">Закрыть</button>
+                                        <div class="clearfix"></div>
+                                    </td>
+                                </tr>
+                                
+                            </tbody>
+                        </table>
+                    </form>
+                        
+                </div>
+			</div>
+	    </section>
+
+	    <section class="seventh-screen">
+			<div class="container">
+				<div class="row">
+					<div class="col-md-12 text-center bottom-text">
+						<h3>Большие дела начинаются с малого</h3>
+						<p>Системный подход к здоровью за 5 минут</p>
+						<span class="small-orange-text">не является медицинской консультацией</span>
+						<button type="button" class="btn btn-default orange-btn bottom-btn">Добавить повод сейчас</button>
+					</div>
+				</div>
+			</div>
+	    	
+	    </section>
+	    <footer>
+	    	<div class="container">
+	    		<div class="row">
+	    			<div class="col-md-6 col-sm-6 text-left footer-contacts" >
+	    				<p>ООО "Рухэлснет", 194292, г. Санкт-Петербург, </br> 	Проспект Просвещения, 15, офис 148</p>
+	    			</div>
+	    			<div class="col-md-6  col-sm-6 text-right">
+	    				<div class="footer-support">
+	    					<p>cлужба поддержки</p>
+	    					<span>8-800-5555-78-2</span> 
+	    				</div>
+	    			</div>
+	    		</div>
+	    	</div>
+	    </footer>
+
+	    <div itemscope itemtype="http://schema.org/Organization" style="display:none;">
+	    	 <img itemprop="logo" src="http://www.ruhealth.net/bitrix/templates/main/images/logo.png" />
+			  <span itemprop="name">Telemed365</span>
+			  Контакты:
+			  <div itemprop="address" itemscope itemtype="http://schema.org/PostalAddress">
+			    Адрес:
+			    <span itemprop="streetAddress">Проспект Просвещения, 15</span>
+			    <span itemprop="postalCode">194292</span>
+			    <span itemprop="addressLocality">Санкт-Петербург</span>,
+			  </div>
+			  Телефон:<span itemprop="telephone">8-800-5555-78-2</span>
+		</div>
+
+		<!-- Button trigger modal -->
+
+		<div id="shedule-confirm" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+             <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button class="close" type="button" data-dismiss="modal">×</button>
+                       
+                    </div>
+                    <div class="modal-body">
+                        
+                        <p>Спасибо! Ваша запись к врачу успешно создана.</p>
+                    </div>
+                    <div class="modal-footer">
+                        <button class="btn btn-default" type="button" data-dismiss="modal">Закрыть</button>
+                    </div>
+                </div>
+            </div>
+        </div>         
+	    <!--SCRIPTS-->
+	    <script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
+		<script src="js/bootstrap.min.js"></script>
+		<script src="js/collapse-info.js"></script>
+		
+		<script type="text/javascript">
+                                                
+        $('.new-calendar a').on('click', function(e) {
+            $('.new-calendar a').removeClass('active-time');
+            $(this).addClass('active-time');
+            e.preventDefault(); 
+        });
+     </script>   
+	</body>
+</html>

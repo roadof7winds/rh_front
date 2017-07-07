@@ -1,0 +1,191 @@
+.shedule {
+    position: relative;
+    width:100%;
+    padding-bottom: 15px;
+}
+
+.relative {
+    position: relative;
+}
+
+.shedule_header {
+    text-align: center;
+    margin: auto;
+    font-size: 24px;
+    line-height: 25px;
+    font-weight: normal;
+    color: #04b0cf;
+    padding-bottom: 0px;
+}
+
+
+.shedule input {
+    font-size: 13px;
+    margin-bottom: 5px;
+    text-align: center;
+    width: 100%;
+}
+
+/*input.custom-text, textarea.custom-text {
+    font-size: 15px;
+    color: #666;
+}
+*/
+
+
+.relative.ap_name .errorMessage {
+    left: 40px;
+    top: 20px;
+}
+
+.shedule .errorMessage, .shedule .error {
+    font-size: 12px;
+    margin: 5px 2px;
+    color: #D72D2D!important;
+}
+
+
+.shedule .shedule-table {
+    width: 100%;
+    margin: 0 auto;
+}
+.shedule .shedule-table tr {
+    border: none;
+}
+.shedule .shedule-table td {
+    padding: 10px 0px;
+    text-align: center;
+}
+
+.shedule_item_name {
+    display: block;
+    width: 100%;
+    text-align: left;
+    font-size: 16px;
+    font-family: 'Open+Sans',sans-serif;
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+
+.shedule .picker {
+    
+    display: block;
+    font-size: 12px;
+    text-align: center;
+    margin-bottom: 10px;
+    position: relative;
+    padding-top: 6px;
+    padding-bottom: 6px;
+}
+
+.picker-arrow {
+    position: absolute;
+    top: 10px;
+    height: 24px;
+    width: 40px;
+    cursor: pointer;
+    font-size: 30px;
+    color: #000;
+}
+
+.shedule .arrow-right {
+    right: -10px;
+    
+}
+.shedule .arrow-left {
+    left: -15px;
+}
+
+.icon_loading {
+    display: block;
+    height: 40px;
+    margin: auto;
+    background: url(/images/loading.gif) no-repeat scroll center transparent;
+}
+
+.shedule .new-calendar {
+    margin: 0 auto;
+    /*text-align: left;*/
+}
+
+.new-calendar .btn {
+    background: #d6d7db;
+    border: 1px solid #d6d7db;
+    border-radius: 8px;
+    box-sizing: border-box;
+    font-size: 15px;
+    height: 50px;
+    width: 75px;
+    color: #000;
+    line-height: 24px;
+    margin: 0px 5px 5px 0px;
+    padding: 12px 7px 0px 7px;
+    text-align: center;
+    text-decoration: none;
+    text-shadow: inherit !important;
+}
+
+.btn_doctor_sign {
+    height: 40px;
+    font-size: 16px;
+} 
+
+.new-calendar .btn:hover {
+    border-color: #ccc;
+    background: #ccc;
+    color: #000;
+}
+
+.new-calendar .btn.active-time {
+    background-color: #f15f24;
+    border-color: #f15f24;
+    color: white !important;
+    box-shadow: none;
+}
+
+.new-calendar .btn.inactive-time {
+    border: none;
+    background: none;
+    color: #000;
+    box-shadow: none;
+}
+
+.new-calendar .day-picker, .new-calendar .day-picker:hover {
+   background-color: #b3b4b6; 
+   border: 1px solid #b3b4b6; 
+   color: #fff; 
+   padding: 5px 7px 0px 7px;  
+}
+ 
+.new-calendar .day-picker p, .new-calendar .day-picker:hover p{
+   color: #fff; 
+   margin: 0;
+   padding: 0; 
+   line-height: 18px;
+   font-weight: 400; 
+}
+
+.phone {
+    color: #555555;
+    display: inline-block;
+    font-size: 13px;
+    height: 18px;
+    line-height: 18px;
+    padding: 10px 5px;
+    position: relative;
+    vertical-align: top;
+    width: 190px;
+    word-spacing: normal;
+}
+
+
+.invisible {
+    visibility: hidden;
+}
+
+#shedule-confirm {
+    border: 0px;
+}
+
+
+
