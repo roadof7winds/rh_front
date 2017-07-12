@@ -809,12 +809,12 @@ span.docscores-stars0			{background-position: 0 0px;}
 
 .dutydoc-fav {
 	position: absolute;
-    top: 23px;
+    top: 35px;
     right: 20px;
 	> input { display: none; }
 	> label {color: #f6f7fc;}
 	> label:before { 
-		  font-size: 2.5em;
+		  font-size: 1.7em;
 		  font-family: FontAwesome;
 		  display: inline-block;
 		  content: "\f004"; 
@@ -950,6 +950,7 @@ span.docscores-stars0			{background-position: 0 0px;}
 	font-size: 14px;
 	float: left;
     width: 100%;
+    margin-bottom: 20px;
 }
 
 .search-sort-select {

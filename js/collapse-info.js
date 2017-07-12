@@ -1,14 +1,14 @@
 $(document).ready(function(){
-	$(".collapse-clinic-info").click(function () {
-		$(this).closest('.by-clinic').find(".clinic-info-block").slideToggle(300);
-		
-		if ($(this).text()=="развернуть")
+  $(".collapse-clinic-info").click(function () {
+    $(this).closest('.by-clinic').find(".clinic-body").slideToggle(300);
+    
+    if ($(this).text()=="показать")
             {
                $(this).text("свернуть")
             }
         else
             {
-               $(this).text("развернуть")
+               $(this).text("показать")
             };
       return false;
     });

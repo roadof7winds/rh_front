@@ -669,14 +669,14 @@ span.docscores-stars0 {
 
 .dutydoc-fav {
   position: absolute;
-  top: 23px;
+  top: 35px;
   right: 20px; }
   .dutydoc-fav > input {
     display: none; }
   .dutydoc-fav > label {
     color: #f6f7fc; }
   .dutydoc-fav > label:before {
-    font-size: 2.5em;
+    font-size: 1.7em;
     font-family: FontAwesome;
     display: inline-block;
     content: "\f004"; }
@@ -780,7 +780,8 @@ span.docscores-stars0 {
   font-family: "Open+Sans", sans-serif;
   font-size: 14px;
   float: left;
-  width: 100%; }
+  width: 100%;
+  margin-bottom: 20px; }
 
 .search-sort-select {
   display: inline-block;
