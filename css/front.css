@@ -692,6 +692,19 @@ span.docscores-stars0 {
 .dutydoc-fav > input:checked ~ label:hover ~ label {
   color: #FFED85; }
 
+  .to-favorites{
+    font-size: 1.7em;
+    color: #f6f7fc;
+  }
+
+  .to-favorites:hover{
+    color: #FFED85;
+  }
+  
+  .to-favorites.active {
+    color: #febf32;
+  }
+
 .consult-cost, .clinic-phone {
   text-align: right; }
   .consult-cost p, .clinic-phone p {

@@ -808,28 +808,42 @@ span.docscores-stars05			{background-position: 0 -16px;}
 span.docscores-stars0			{background-position: 0 0px;}
 
 .dutydoc-fav {
-	position: absolute;
-    top: 35px;
-    right: 20px;
-	> input { display: none; }
-	> label {color: #f6f7fc;}
-	> label:before { 
-		  font-size: 1.7em;
-		  font-family: FontAwesome;
-		  display: inline-block;
-		  content: "\f004"; 
-	}
-	
-}
+  position: absolute;
+  top: 35px;
+  right: 20px; }
+  .dutydoc-fav > input {
+    display: none; }
+  .dutydoc-fav > label {
+    color: #f6f7fc; }
+  .dutydoc-fav > label:before {
+    font-size: 1.7em;
+    font-family: FontAwesome;
+    display: inline-block;
+    content: "\f004"; }
 
-.dutydoc-fav > input:checked ~ label, 
-.dutydoc-fav:not(:checked) > label:hover, 
-.dutydoc-fav:not(:checked) > label:hover ~ label { color: #febf32;  }
+.dutydoc-fav > input:checked ~ label,
+.dutydoc-fav:not(:checked) > label:hover,
+.dutydoc-fav:not(:checked) > label:hover ~ label {
+  color: #febf32; }
 
-.dutydoc-fav > input:checked + label:hover, 
+.dutydoc-fav > input:checked + label:hover,
 .dutydoc-fav > input:checked ~ label:hover,
-.dutydoc-fav > label:hover ~ input:checked ~ label, 
-.dutydoc-fav > input:checked ~ label:hover ~ label { color: #FFED85;  } 
+.dutydoc-fav > label:hover ~ input:checked ~ label,
+.dutydoc-fav > input:checked ~ label:hover ~ label {
+  color: #FFED85; }
+
+  .to-favorites{
+    font-size: 1.7em;
+    color: #f6f7fc;
+  }
+
+  .to-favorites:hover{
+    color: #FFED85;
+  }
+  
+  .to-favorites.active {
+    color: #febf32;
+  }
 
 
 .specification-list {
